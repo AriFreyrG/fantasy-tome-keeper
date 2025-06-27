@@ -1,8 +1,13 @@
-import { BookOpen, Music, Plus, User, Globe } from 'lucide-react'
+'use client'
+
+import { BookOpen, Music, Plus, User, Globe, LogIn, UserPlus } from 'lucide-react'
 import Link from 'next/link'
+import { useAuth } from '@/contexts/AuthContext'
 import { WikiContentDisplay } from '@/components/wiki'
 
 export default function HomePage() {
+  const { user, profile, loading } = useAuth()
+
   return (
     <div className="min-h-screen">
       {/* Header */}
@@ -16,27 +21,54 @@ export default function HomePage() {
               </h1>
             </div>
             <nav className="flex items-center space-x-6">
-              <Link 
-                href="/library" 
-                className="text-gray-700 hover:text-primary-600 transition-colors"
-              >
-                Library
-              </Link>
-              <Link 
-                href="/audiobooks" 
-                className="text-gray-700 hover:text-primary-600 transition-colors"
-              >
-                Audiobooks
-              </Link>
-              <Link 
-                href="/notes" 
-                className="text-gray-700 hover:text-primary-600 transition-colors"
-              >
-                Notes
-              </Link>
-              <button className="p-2 text-gray-700 hover:text-primary-600 transition-colors">
-                <User className="h-5 w-5" />
-              </button>
+              {!loading && user ? (
+                // Authenticated user navigation
+                <>
+                  <Link 
+                    href="/library" 
+                    className="text-gray-700 hover:text-primary-600 transition-colors"
+                  >
+                    Library
+                  </Link>
+                  <Link 
+                    href="/audiobooks" 
+                    className="text-gray-700 hover:text-primary-600 transition-colors"
+                  >
+                    Audiobooks
+                  </Link>
+                  <Link 
+                    href="/notes" 
+                    className="text-gray-700 hover:text-primary-600 transition-colors"
+                  >
+                    Notes
+                  </Link>
+                  <Link 
+                    href="/library"
+                    className="flex items-center space-x-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+                  >
+                    <User className="h-4 w-4" />
+                    <span>{profile?.display_name ?? user.email?.split('@')[0] ?? 'Library'}</span>
+                  </Link>
+                </>
+              ) : (
+                // Guest navigation
+                <>
+                  <Link 
+                    href="/login" 
+                    className="flex items-center space-x-2 text-gray-700 hover:text-primary-600 transition-colors"
+                  >
+                    <LogIn className="h-4 w-4" />
+                    <span>Sign In</span>
+                  </Link>
+                  <Link 
+                    href="/signup"
+                    className="flex items-center space-x-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+                  >
+                    <UserPlus className="h-4 w-4" />
+                    <span>Get Started</span>
+                  </Link>
+                </>
+              )}
             </nav>
           </div>
         </div>

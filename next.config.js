@@ -8,6 +8,8 @@ const nextConfig = {
       'lh3.googleusercontent.com'
     ],
   },
+  // Enable standalone output for Docker deployment
+  output: 'standalone',
   // PWA configuration will be added with next-pwa
 }
 
