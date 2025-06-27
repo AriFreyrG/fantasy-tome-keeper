@@ -1,7 +1,14 @@
 {
   "name": "fantasy-tome-keeper",
   "version": "0.1.0",
+  "description": "A comprehensive Progressive Web App for fantasy book enthusiasts to manage their reading collection, notes, and audiobook experience.",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AriFreyrG/fantasy-tome-keeper.git"
+  },
+  "author": "Ari Freyr Gunnarsson",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
