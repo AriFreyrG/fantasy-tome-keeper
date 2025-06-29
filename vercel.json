@@ -5,15 +5,8 @@
   "installCommand": "npm ci",
   "outputDirectory": ".next",
   "regions": ["iad1"],
-  "functions": {
-    "app/api/**/*.ts": {
-      "runtime": "@vercel/node@2"
-    }
-  },
-  "env": {
-    "NEXT_PUBLIC_SUPABASE_URL": "@fantasy-tome-keeper-supabase-url",
-    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@fantasy-tome-keeper-supabase-anon-key"
-  },
+
+
   "headers": [
     {
       "source": "/(.*)",

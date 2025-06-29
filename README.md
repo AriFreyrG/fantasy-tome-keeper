@@ -120,7 +120,53 @@ NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 
 # App Configuration
-NEXT_PUBLIC_APP_URL=http://localhost:3000
+ari@Mac project4 % npx vercel env add NEXT_PUBLIC_APP_URL
+Vercel CLI 44.2.7
+? What's the value of NEXT_PUBLIC_APP_URL? https://fantasy-tome-keeper.vercel.app
+? Add NEXT_PUBLIC_APP_URL to which Environments (select multiple)? Development
+✅  Added Environment Variable NEXT_PUBLIC_APP_URL to Project fantary-tome-keeper [321ms]
+ari@Mac project4 % npx vercel env ls
+Vercel CLI 44.2.7
+> Environment Variables found for arifreyrs-projects-143f42ff/fantary-tome-keeper [227ms]
+
+ name                               value               environments        created    
+ NEXT_PUBLIC_APP_URL                Encrypted           Development         13s ago    
+ NEXT_PUBLIC_SUPABASE_ANON_KEY      Encrypted           Development         33s ago    
+ NEXT_PUBLIC_SUPABASE_URL           Encrypted           Development         54s ago    
+ NEXT_PUBLIC_APP_URL                Encrypted           Preview             3m ago     
+ NEXT_PUBLIC_SUPABASE_ANON_KEY      Encrypted           Preview             3m ago     
+ NEXT_PUBLIC_SUPABASE_URL           Encrypted           Preview             4m ago     
+ NEXT_PUBLIC_APP_URL                Encrypted           Production          8m ago     
+ NEXT_PUBLIC_SUPABASE_ANON_KEY      Encrypted           Production          9m ago     
+ NEXT_PUBLIC_SUPABASE_URL           Encrypted           Production          9m ago     
+
+ari@Mac project4 % npx vercel --prod
+Vercel CLI 44.2.7
+Error: Environment Variable "NEXT_PUBLIC_SUPABASE_URL" references Secret "fantasy-tome-keeper-supabase-url", which does not exist.
+ari@Mac project4 % ari@Mac project4 % npx vercel env add NEXT_PUBLIC_APP_URL
+Vercel CLI 44.2.7
+? What's the value of NEXT_PUBLIC_APP_URL? https://fantasy-tome-keeper.vercel.app
+? Add NEXT_PUBLIC_APP_URL to which Environments (select multiple)? Development
+✅  Added Environment Variable NEXT_PUBLIC_APP_URL to Project fantary-tome-keeper [321ms]
+ari@Mac project4 % npx vercel env ls
+Vercel CLI 44.2.7
+> Environment Variables found for arifreyrs-projects-143f42ff/fantary-tome-keeper [227ms]
+
+ name                               value               environments        created    
+ NEXT_PUBLIC_APP_URL                Encrypted           Development         13s ago    
+ NEXT_PUBLIC_SUPABASE_ANON_KEY      Encrypted           Development         33s ago    
+ NEXT_PUBLIC_SUPABASE_URL           Encrypted           Development         54s ago    
+ NEXT_PUBLIC_APP_URL                Encrypted           Preview             3m ago     
+ NEXT_PUBLIC_SUPABASE_ANON_KEY      Encrypted           Preview             3m ago     
+ NEXT_PUBLIC_SUPABASE_URL           Encrypted           Preview             4m ago     
+ NEXT_PUBLIC_APP_URL                Encrypted           Production          8m ago     
+ NEXT_PUBLIC_SUPABASE_ANON_KEY      Encrypted           Production          9m ago     
+ NEXT_PUBLIC_SUPABASE_URL           Encrypted           Production          9m ago     
+
+ari@Mac project4 % npx vercel --prod
+Vercel CLI 44.2.7
+Error: Environment Variable "NEXT_PUBLIC_SUPABASE_URL" references Secret "fantasy-tome-keeper-supabase-url", which does not exist.
+ari@Mac project4 % NEXT_PUBLIC_APP_URL=http://localhost:3000
 
 # Google Books API (OPTIONAL)
 NEXT_PUBLIC_GOOGLE_BOOKS_API_KEY=your_google_books_api_key
